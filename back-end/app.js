@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bookmarksControllers = require("./controllers/bookmarkscontrollers");
+const reviewsControllers = require("./controllers/reviewsController.js");
 
 //configuration
 const app = express();
@@ -13,7 +14,6 @@ app.use(express.json()); //parses incoming json request
 app.get("/", (req, res) => {
   res.send("Welcome to Bookmarks App");
 });
-
 
 app.use("/bookmarks", bookmarksControllers);
 
