@@ -11,8 +11,8 @@ const getAllBookmarks = async () => {
 
 const getBookmark = async (id) => {
   try {
-    const result = await db.any(`SELECT * FROM bookmarks WHERE id=${id}`);
-    return { result };
+    const bookmark = await db.one(`SELECT * FROM bookmarks WHERE id=${id}`);
+    return bookmark;
   } catch (error) {
     return { error };
   }
